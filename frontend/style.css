@@ -1,0 +1,424 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Auth Styles */
+.auth-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+}
+
+.auth-container input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.auth-container input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.auth-container button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin: 10px 0;
+}
+
+.auth-container button:hover {
+    transform: translateY(-2px);
+}
+
+#toggle-auth {
+    margin-top: 20px;
+    color: #666;
+}
+
+#toggle-auth a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#auth-message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    display: none;
+    font-weight: 500;
+}
+
+.message-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.message-info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Dashboard Styles */
+.dashboard-header {
+    background: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dashboard-header h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info span {
+    font-weight: 600;
+    color: #555;
+}
+
+.logout-btn {
+    padding: 8px 16px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.logout-btn:hover {
+    background: #c82333;
+}
+
+.tabs {
+    display: flex;
+    background: white;
+    padding: 0 40px;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.tab-btn {
+    padding: 15px 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    border-bottom-color: #667eea;
+    color: #667eea;
+}
+
+.tab-btn:hover {
+    color: #667eea;
+    background: #f8f9fa;
+}
+
+.dashboard-content {
+    padding: 30px 40px;
+    min-height: calc(100vh - 140px);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-header {
+    margin-bottom: 30px;
+}
+
+.tab-header h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.tab-header p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* Camera Styles */
+.camera-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.video-container {
+    position: relative;
+    display: inline-block;
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+.btn {
+    padding: 12px 24px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #5a6fd8;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: #5a6268;
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-success:hover:not(:disabled) {
+    background: #218838;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+    background: #c82333;
+}
+
+.btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Student Info */
+.student-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.input-field {
+    padding: 12px 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 6px;
+    font-size: 14px;
+    min-width: 200px;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Status Messages */
+.status-message {
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Records Section */
+.records-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.cards-container {
+    display: grid;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.student-card, .attendance-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid #667eea;
+}
+
+.student-card h5, .attendance-card h5 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.student-card p, .attendance-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 3px 0;
+}
+
+.attendance-card.present {
+    border-left-color: #28a745;
+}
+
+.recognition-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#recognition-stats {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .records-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .tabs {
+        padding: 0 20px;
+        flex-wrap: wrap;
+    }
+    
+    .dashboard-content {
+        padding: 20px;
+    }
+    
+    .student-info {
+        flex-direction: column;
+    }
+    
+    .input-field {
+        min-width: 100%;
+    }
+    
+    .video-container {
+        max-width: 100%;
+    }
+    
+    .video-container video,
+    .video-container canvas {
+        width: 100%;
+        height: auto;
+    }
+}
