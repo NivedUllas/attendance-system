@@ -8,7 +8,9 @@ let isRecognitionRunning = false;
 let recognitionInterval = null;
 
 // API Base URL
-const API_BASE = 'https://your-backend.onrender.com/api';
+//const API_BASE = 'https://your-backend.onrender.com/api';
+//const API_URL = 'http://localhost:5000';
+const API_BASE = 'http://localhost:5000/api';
 
 // TensorFlow.js Face Detection
 class FaceRecognition {
