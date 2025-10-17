@@ -1,3 +1,10 @@
+/*
+ * Contactless Attendance Management with Face Detection
+ * Author: Nived Ullas
+ * GitHub: https://github.com/NivedUllas
+ * Created: October 2025
+ */
+
 const express = require('express');
 const cors = require('cors');
 const { createClient } = require('@supabase/supabase-js');
@@ -7,6 +14,8 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+
 
 // Middleware
 app.use(cors());

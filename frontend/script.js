@@ -7,6 +7,13 @@ let faceDetector = null;
 let isRecognitionRunning = false;
 let recognitionInterval = null;
 
+/*
+ * Contactless Attendance Management with Face Detection
+ * Author: Nived Ullas
+ * GitHub: https://github.com/NivedUllas
+ * Created: October 2025
+ */
+
 // API Base URL
 //const API_BASE = 'https://your-backend.onrender.com/api';
 //const API_URL = 'http://localhost:5000';
